@@ -1,0 +1,3 @@
+# Fast engine for the English translation. Installed for the 64-bit Windows and macOS builds;
+# there are no 32-bit wheels, so the 32-bit Windows build uses ytmp3/nllb.py's numpy engine instead.
+ctranslate2

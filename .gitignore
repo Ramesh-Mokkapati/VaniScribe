@@ -1,0 +1,44 @@
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments made by the build scripts:
+# .venv (Windows x64), .venv-x86 (Windows 32-bit), .venv-model (prepare_model.ps1),
+# .venv-macos-arm64 / .venv-macos-x64 (build_macos.sh)
+.venv/
+.venv-*/
+
+# --- Build output (recreated by build.ps1 / build_macos.sh / prepare_model.ps1) ---
+build/
+dist/
+# Downloaded tools: FFmpeg, Deno/Node.js, whisper.cpp (vendor/<platform>/bin) and the
+# private 32-bit Python (tools/python-x86)
+vendor/
+tools/
+# Speech and translation models (~900 MB); prepare_model.ps1 rebuilds them, and the
+# pipeline caches them. Keep ytmp3.spec tracked: it is the build definition, not generated.
+models/
+
+# --- Files the app writes next to audio while it works ---
+*.partial.json
+*.partial.json.tmp
+*.docx.tmp
+
+# --- Scratch output from screenshot/test runs ---
+docs/sample/
+*.log
+
+# --- Editors and operating systems ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Claude Code: personal local settings (shared settings in .claude/ stay tracked) ---
+.claude/settings.local.json
